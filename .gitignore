@@ -2,3 +2,5 @@ node_modules/
 dist/
 src/data.json
 __pycache__/
+# private source docs (e.g. résumé with phone number); public files go in public/
+content/*.pdf

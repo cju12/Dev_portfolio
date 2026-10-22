@@ -1,26 +1,28 @@
-# SAMPLE ENTRIES: replace with your own. Sorted newest first. Omit `end` for a current role.
+# Sorted newest first. Omit `end` for a current role.
 #
 # Required: role, org, start ("YYYY-MM"), summary
 # Optional: end, location, url, highlights, tags
 
 [[experience]]
-role = "Software Engineering Intern"
-org = "Example Corp"
-start = "2026-06"
-location = "Remote"
-url = "https://example.com"
-summary = "Worked on the platform team building internal developer tools."
+role = "Software Engineer"
+org = "Königsberger Bridges Institute (KBI)"
+start = "2026-05"
+summary = "Building internal technical tools that streamline operational workflows and support data processing pipelines."
 highlights = [
-  "Cut CI time 40% by parallelising the test suite",
-  "Shipped a self-serve feature-flag dashboard used by 12 teams",
+  "Develop and maintain internal tools that streamline operational workflows and feed data processing pipelines",
+  "Work with engineering teams to find bottlenecks in existing systems and resolve frontend functional bugs",
+  "Investigate system flaws and ship fast iterations to keep the daily delivery pipeline running smoothly",
 ]
-tags = ["Python", "TypeScript", "AWS"]
+tags = ["Internal Tools", "Data Pipelines", "Debugging"]
 
 [[experience]]
-role = "Teaching Assistant"
-org = "Sample University"
-start = "2025-02"
-end = "2025-12"
-summary = "TA for Intro to Programming: weekly labs, office hours and grading for 120 students."
-highlights = ["Wrote auto-graded lab exercises adopted for the following term"]
-tags = ["Python", "Teaching"]
+role = "STEM Instructor"
+org = "Brainchild DIY"
+start = "2026-04"
+summary = "Teaching hardware and software through hands-on build projects."
+highlights = [
+  "Translate complex hardware and software logic into clear, step-by-step instruction",
+  "Troubleshoot C++ code in real time in a fast-paced, highly interactive classroom",
+  "Guide students through prototyping and deploying working hardware projects",
+]
+tags = ["C++", "Hardware", "Teaching"]

@@ -1,35 +1,40 @@
-# SAMPLE ENTRIES: replace with your own. Sorted newest first.
+# Sorted newest first. Several projects at one event (e.g. different tracks) count as one hackathon in the stats.
 #
 # Required: event, project, date ("YYYY-MM"), summary
-# Optional: award, location, team_size, tags, links
+# Optional: award, host, track, location, team_size (1 shows as "Solo"), tags, links
 
 [[hackathons]]
-event = "Sample Hack 2026"
-project = "GreenRoute"
-date = "2026-05"
-summary = "Route planner that trades a few minutes of travel time for a big cut in emissions, built in 36 hours."
-award = "1st Place"
-location = "Seoul"
+event = "GenAI Inter-University Hackathon"
+project = "CareCompass"
+date = "2026-09"
+summary = "A voice-first health companion for older people in Hong Kong and their carers. Talk in Cantonese or English to log symptoms into a one-page summary for the doctor, keep a medicine list with interaction warnings, and find the A&E you can be seen at soonest from live Hospital Authority waiting times. It organises and routes; it never diagnoses."
 team_size = 4
-tags = ["TypeScript", "Maps API"]
+tags = ["TypeScript", "Next.js", "Python", "FastAPI", "LLM"]
+links = [{ label = "Source", url = "https://github.com/Seungwoo0120/Gen-AI-Hackathon" }]
+
+[[hackathons]]
+event = "Agent Creativity Hackathon for Autism Charity"
+host = "AI Builders"
+track = "CodeBuddy Track"
+project = "Node: HK"
+date = "2026-08"
+summary = "Hong Kong's MTR network as a graph-theory puzzle. Each round names a line; drag its stations onto the board, where every placed station connects to every other to form a complete graph. Fully keyboard-playable, with station data checked against current MTR sources."
+location = "Hong Kong"
+team_size = 1
+tags = ["JavaScript", "Graph Theory", "Game"]
 links = [
-  { label = "Devpost", url = "https://devpost.com" },
-  { label = "Source", url = "https://github.com/your-username/greenroute" },
+  { label = "Live demo", url = "https://c0b7d78a92e24a9292065285be5d6761.ap-singapore.myide.io/" },
+  { label = "Source", url = "https://github.com/cju12/Node-HK" },
 ]
 
 [[hackathons]]
-event = "Example AI Challenge"
-project = "StudyBuddy"
-date = "2025-10"
-summary = "An AI tutor that turns lecture slides into spaced-repetition quizzes."
-award = "Best Use of AI"
-team_size = 3
-tags = ["Python", "LLM"]
-
-[[hackathons]]
-event = "Weekend Build Jam"
-project = "Queue-less"
-date = "2025-04"
-summary = "Virtual queueing for campus cafés using QR codes and SMS updates."
-team_size = 2
-tags = ["Python", "Flask"]
+event = "Agent Creativity Hackathon for Autism Charity"
+host = "AI Builders"
+track = "WorkBuddy Track"
+project = "AU-PPORT"
+date = "2026-07"
+summary = "An autism support-plan agent skill for WorkBuddy. From one short brief about a child and an upcoming situation, it generates a printable, bilingual (English and Cantonese) support plan with sensory triggers and fixes, a rehearsal story for the child, and accommodations for the teacher."
+location = "Hong Kong"
+team_size = 1
+tags = ["Python", "AI Agents", "Bilingual"]
+links = [{ label = "Source", url = "https://github.com/cju12/AU-PPORT" }]

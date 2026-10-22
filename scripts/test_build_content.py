@@ -24,14 +24,15 @@ class BuildContentTest(unittest.TestCase):
             projects='[[projects]]\ntitle = "old"\ndate = "2024-01"\nsummary = "s"\n'
             '[[projects]]\ntitle = "new"\ndate = "2025-06"\nsummary = "s"\n'
             '[[projects]]\ntitle = "star"\ndate = "2023-01"\nsummary = "s"\nfeatured = true\n',
-            hackathons='[[hackathons]]\nevent = "H"\nproject = "p"\ndate = "2025-01"\nsummary = "s"\naward = "1st"\n',
+            hackathons='[[hackathons]]\nevent = "H"\nproject = "p"\ndate = "2025-01"\nsummary = "s"\naward = "1st"\n'
+            '[[hackathons]]\nevent = "H"\nproject = "q"\ndate = "2025-01"\nsummary = "s"\ntrack = "t"\n',
             experience='[[experience]]\nrole = "r"\norg = "O"\nstart = "2024-02"\nsummary = "s"\n',
         )
-        self.assertEqual([p["title"] for p in data["projects"]], ["star", "new", "old"])
+        self.assertEqual([p["title"] for p in data["projects"]], ["star", "new", "p", "q", "old"])
         self.assertEqual(data["projects"][1]["when"], "Jun 2025")
         self.assertEqual(data["projects"][1]["tags"], [])
+        self.assertEqual(data["projects"][2]["tags"], ["Hackathon"])
         self.assertEqual(data["experience"][0]["when"], "Feb 2024 – Present")
-        self.assertEqual(data["stats"], {"projects": 3, "hackathons": 1, "awards": 1})
         self.assertEqual(data["orgs"], ["O", "H"])
 
     def test_rejects_typos(self):

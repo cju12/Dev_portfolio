@@ -18,7 +18,7 @@ OUT = ROOT / "src" / "data.json"
 SCHEMA = {
     "profile": (
         ["name", "tagline", "email"],
-        {"roles": [], "status": "", "location": "", "resume": None, "socials": []},
+        {"roles": [], "resume": None, "socials": []},
     ),
     "projects": (
         ["title", "date", "summary"],
@@ -26,7 +26,7 @@ SCHEMA = {
     ),
     "hackathons": (
         ["event", "project", "date", "summary"],
-        {"award": None, "location": "", "team_size": None, "tags": [], "links": []},
+        {"award": None, "host": "", "track": "", "location": "", "team_size": None, "tags": [], "links": []},
     ),
     "experience": (
         ["role", "org", "start", "summary"],
@@ -109,16 +109,18 @@ def build(content_dir):
             items.append(item)
         data[section] = items
 
+    # Hackathon builds also appear as project cards, tagged so the filter can isolate them.
+    data["projects"] += [
+        {"title": h["project"], "date": h["date"], "when": h["when"], "summary": h["summary"],
+         "tags": h["tags"] + ["Hackathon"], "links": h["links"], "image": None, "featured": False}
+        for h in data["hackathons"]
+    ]
+
     # "YYYY-MM" strings sort chronologically. Newest first, featured projects on top.
     data["projects"].sort(key=lambda p: (p["featured"], p["date"]), reverse=True)
     data["hackathons"].sort(key=lambda h: h["date"], reverse=True)
     data["experience"].sort(key=lambda j: j["start"], reverse=True)
 
-    data["stats"] = {
-        "projects": len(data["projects"]),
-        "hackathons": len(data["hackathons"]),
-        "awards": sum(1 for h in data["hackathons"] if h["award"]),
-    }
     data["orgs"] = list(dict.fromkeys(
         [j["org"] for j in data["experience"]] + [h["event"] for h in data["hackathons"]]
     ))
@@ -131,7 +133,8 @@ def main():
     except (ContentError, FileNotFoundError) as e:
         sys.exit(f"content error: {e}")
     OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"wrote {OUT.relative_to(ROOT)}: " + ", ".join(f"{v} {k}" for k, v in data["stats"].items()))
+    sections = ("projects", "hackathons", "experience")
+    print(f"wrote {OUT.relative_to(ROOT)}: " + ", ".join(f"{len(data[k])} {k}" for k in sections))
 
 
 if __name__ == "__main__":

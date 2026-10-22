@@ -1,36 +1,36 @@
-# SAMPLE ENTRIES: replace with your own.
 # Sorted automatically: featured first, then newest first. Featured cards render larger.
+# Hackathon projects are added here automatically from hackathons.toml (tagged "Hackathon").
 #
 # Required: title, date ("YYYY-MM"), summary
 # Optional: tags, links, image (put files in public/images/ → image = "images/x.png"), featured
+#   links = [{ label = "Source", url = "https://github.com/cju12/repo-name" }]
 
 [[projects]]
-title = "Portfolio Engine"
-date = "2026-10"
-summary = "This site. Content lives in TOML, a Python step validates and compiles it, and a TypeScript frontend renders it. Deployed by GitHub Actions."
-tags = ["Python", "TypeScript", "Vite"]
-links = [{ label = "Source", url = "https://github.com/your-username/portfolio" }]
+title = "Distributed System Log Anomaly Detection (HDFS)"
+date = "2025-09"
+summary = "Deep-learning pipeline that monitors Hadoop distributed file system logs for anomalies. Raw HDFS logs are parsed into structured, queryable data with Drain3, then analysed by a TensorFlow model for high-accuracy threat detection."
+tags = ["Python", "TensorFlow", "Drain3"]
 featured = true
 
 [[projects]]
-title = "Course Planner"
-date = "2026-03"
-summary = "Drag-and-drop semester planner that checks prerequisites and flags timetable clashes."
-tags = ["TypeScript", "React", "FastAPI"]
+title = "Choice Overload in a Dating Context"
+date = "2026-06"
+summary = "A behavioural experiment on whether more options lead to worse choices. Each participant used a dating-style Streamlit app twice, once with 4 profiles and once with 22. Across 25 participants, regret rose from 3.0 to 4.2 (Wilcoxon p = 0.01) while satisfaction stayed about the same."
+tags = ["Python", "Streamlit", "Statistics"]
 links = [
-  { label = "Live", url = "https://example.com" },
-  { label = "Source", url = "https://github.com/your-username/course-planner" },
+  { label = "Live app", url = "https://choiceoverload.streamlit.app" },
+  { label = "Source", url = "https://github.com/cju12/ChoiceOverload" },
 ]
 
 [[projects]]
-title = "Realtime Chat"
-date = "2025-11"
-summary = "WebSocket chat with rooms, typing indicators and message history."
-tags = ["Python", "WebSockets"]
-links = [{ label = "Source", url = "https://github.com/your-username/chat" }]
+title = "Sentiment Analysis of Jerome Powell's Press Conferences"
+date = "2026-01"
+summary = "Scored 40 FOMC press conference transcripts (2020 to 2025) with the AFINN and Bing lexicons and compared the results with S&P 500 forward returns. The correlation was weak: r = 0.27 for 1-day returns and close to zero for 5 and 10 days."
+tags = ["R", "NLP", "Finance"]
+links = [{ label = "Source", url = "https://github.com/cju12/Sentiment-Analysis-of-Jerome-Powell" }]
 
 [[projects]]
-title = "Image Classifier"
-date = "2025-06"
-summary = "Fine-tuned vision model served behind a small API, with a drag-and-drop demo page."
-tags = ["Python", "PyTorch", "ML"]
+title = "Database-Backed Web Application"
+date = "2025-05"
+summary = "Full-stack web app prototype with backend tooling and CRUD operations for managing content. API endpoints were tested and fixed through structured debugging."
+tags = ["Node.js", "MongoDB", "React"]
