@@ -1,0 +1,26 @@
+# SAMPLE ENTRIES: replace with your own. Sorted newest first. Omit `end` for a current role.
+#
+# Required: role, org, start ("YYYY-MM"), summary
+# Optional: end, location, url, highlights, tags
+
+[[experience]]
+role = "Software Engineering Intern"
+org = "Example Corp"
+start = "2026-06"
+location = "Remote"
+url = "https://example.com"
+summary = "Worked on the platform team building internal developer tools."
+highlights = [
+  "Cut CI time 40% by parallelising the test suite",
+  "Shipped a self-serve feature-flag dashboard used by 12 teams",
+]
+tags = ["Python", "TypeScript", "AWS"]
+
+[[experience]]
+role = "Teaching Assistant"
+org = "Sample University"
+start = "2025-02"
+end = "2025-12"
+summary = "TA for Intro to Programming: weekly labs, office hours and grading for 120 students."
+highlights = ["Wrote auto-graded lab exercises adopted for the following term"]
+tags = ["Python", "Teaching"]

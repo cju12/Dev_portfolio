@@ -1,0 +1,35 @@
+# SAMPLE ENTRIES: replace with your own. Sorted newest first.
+#
+# Required: event, project, date ("YYYY-MM"), summary
+# Optional: award, location, team_size, tags, links
+
+[[hackathons]]
+event = "Sample Hack 2026"
+project = "GreenRoute"
+date = "2026-05"
+summary = "Route planner that trades a few minutes of travel time for a big cut in emissions, built in 36 hours."
+award = "1st Place"
+location = "Seoul"
+team_size = 4
+tags = ["TypeScript", "Maps API"]
+links = [
+  { label = "Devpost", url = "https://devpost.com" },
+  { label = "Source", url = "https://github.com/your-username/greenroute" },
+]
+
+[[hackathons]]
+event = "Example AI Challenge"
+project = "StudyBuddy"
+date = "2025-10"
+summary = "An AI tutor that turns lecture slides into spaced-repetition quizzes."
+award = "Best Use of AI"
+team_size = 3
+tags = ["Python", "LLM"]
+
+[[hackathons]]
+event = "Weekend Build Jam"
+project = "Queue-less"
+date = "2025-04"
+summary = "Virtual queueing for campus cafés using QR codes and SMS updates."
+team_size = 2
+tags = ["Python", "Flask"]

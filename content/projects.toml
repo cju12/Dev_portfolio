@@ -1,0 +1,36 @@
+# SAMPLE ENTRIES: replace with your own.
+# Sorted automatically: featured first, then newest first. Featured cards render larger.
+#
+# Required: title, date ("YYYY-MM"), summary
+# Optional: tags, links, image (put files in public/images/ → image = "images/x.png"), featured
+
+[[projects]]
+title = "Portfolio Engine"
+date = "2026-10"
+summary = "This site. Content lives in TOML, a Python step validates and compiles it, and a TypeScript frontend renders it. Deployed by GitHub Actions."
+tags = ["Python", "TypeScript", "Vite"]
+links = [{ label = "Source", url = "https://github.com/your-username/portfolio" }]
+featured = true
+
+[[projects]]
+title = "Course Planner"
+date = "2026-03"
+summary = "Drag-and-drop semester planner that checks prerequisites and flags timetable clashes."
+tags = ["TypeScript", "React", "FastAPI"]
+links = [
+  { label = "Live", url = "https://example.com" },
+  { label = "Source", url = "https://github.com/your-username/course-planner" },
+]
+
+[[projects]]
+title = "Realtime Chat"
+date = "2025-11"
+summary = "WebSocket chat with rooms, typing indicators and message history."
+tags = ["Python", "WebSockets"]
+links = [{ label = "Source", url = "https://github.com/your-username/chat" }]
+
+[[projects]]
+title = "Image Classifier"
+date = "2025-06"
+summary = "Fine-tuned vision model served behind a small API, with a drag-and-drop demo page."
+tags = ["Python", "PyTorch", "ML"]

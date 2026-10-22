@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <meta name="description" content="Projects, hackathons and experience." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <script>
+      try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+    </script>
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" id="brand" href="#top"></a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#projects">Projects</a>
+        <a href="#hackathons">Hackathons</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="icon-btn" id="theme" type="button" aria-label="Toggle dark mode">◐</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="status reveal" id="status"></p>
+        <h1 class="reveal" style="--i: 1">
+          Hi, I'm <span id="name"></span><br />
+          <span class="typed" id="typed" aria-hidden="true"></span><span class="sr-only" id="roles"></span>
+        </h1>
+        <p class="lede reveal" id="tagline" style="--i: 2"></p>
+        <div class="actions reveal" style="--i: 3">
+          <a class="btn primary" href="#projects">See my work <span aria-hidden="true">→</span></a>
+          <a class="btn" href="#contact">Get in touch</a>
+          <a class="btn" id="resume" target="_blank" rel="noopener" hidden>Résumé ↗</a>
+        </div>
+        <div class="stats reveal" id="stats" style="--i: 4"></div>
+      </section>
+
+      <div class="marquee" id="marquee"></div>
+
+      <section class="section" id="projects">
+        <header class="section-head reveal">
+          <span class="label">01 — Projects</span>
+          <h2>Things I've <em>built</em></h2>
+        </header>
+        <div class="filters" id="filters" role="toolbar" aria-label="Filter projects by tag"></div>
+        <div class="grid" id="project-grid"></div>
+      </section>
+
+      <section class="section" id="hackathons">
+        <header class="section-head reveal">
+          <span class="label">02 — Hackathons</span>
+          <h2>Weekends spent <em>shipping</em></h2>
+        </header>
+        <ol class="hack-list" id="hack-list"></ol>
+      </section>
+
+      <section class="section" id="experience">
+        <header class="section-head reveal">
+          <span class="label">03 — Experience</span>
+          <h2>Where I've <em>worked</em></h2>
+        </header>
+        <ol class="timeline" id="timeline"></ol>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="contact reveal">
+          <span class="label">04 — Contact</span>
+          <h2>Let's build <em>something</em> together.</h2>
+          <div class="actions"><a class="btn primary" id="email">Say hello ↗</a></div>
+          <div class="socials" id="socials"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span id="copyright"></span>
+      <span>Built with Python + TypeScript</span>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

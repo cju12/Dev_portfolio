@@ -1,0 +1,17 @@
+# Your basics. Save while `npm run dev` is running and the page reloads.
+# Required: name, tagline, email
+
+name = "Jinuk Choi"
+tagline = "I build software that ships — from 24-hour hackathon prototypes to production features real people use."
+email = "you@example.com"
+status = "Open to opportunities"
+# location = "Seoul, KR"
+# resume = "resume.pdf"   # put the file in public/
+
+# Rotates in the hero. Include the article so it reads naturally.
+roles = ["a full-stack developer", "a hackathon regular", "a curious builder"]
+
+socials = [
+  { label = "GitHub", url = "https://github.com/your-username" },
+  { label = "LinkedIn", url = "https://www.linkedin.com/in/your-handle" },
+]
