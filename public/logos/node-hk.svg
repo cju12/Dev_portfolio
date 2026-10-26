@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Node: HK">
+  <title>Node: HK</title>
+  <rect width="64" height="64" rx="15" fill="#ffffff"/>
+  <g stroke="#ffffff" stroke-width="1.15" stroke-linejoin="round" stroke-opacity=".85">
+    <polygon points="14.47,40.78 5.53,33.94 11.17,15.94 23.60,11.65 25.63,27.00" fill="#5ebbe3"/>
+    <polygon points="52.83,21.12 43.70,32.85 25.63,27.00 23.60,11.65 40.40,8.02" fill="#68c5ea"/>
+    <polygon points="25.63,55.14 14.47,40.78 25.63,27.00 43.70,32.85 43.70,50.24" fill="#2f8fc4"/>
+    <polygon points="25.63,55.14 23.60,57.18 11.17,44.08 5.53,33.94 14.47,40.78" fill="#1375b1"/>
+    <polygon points="40.40,53.55 23.60,57.18 25.63,55.14 43.70,50.24 52.83,49.26" fill="#0c6eac"/>
+    <polygon points="43.70,50.24 43.70,32.85 52.83,21.12 58.47,31.26 52.83,49.26" fill="#2585bd"/>
+  </g>
+</svg>

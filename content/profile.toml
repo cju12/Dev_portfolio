@@ -2,14 +2,49 @@
 # Required: name, tagline, email
 
 name = "Choi Jinuk"
-tagline = "Computer Science student at The University of Hong Kong (BEng, class of 2028). I build internal tools, web apps and machine-learning pipelines, and teach STEM on the side."
+tagline = "I build internal tools, web apps and machine-learning pipelines."
 email = "chjinuk01@gmail.com"
-# resume = "resume.pdf"   # put the file in public/
+photo = "images/profile.jpg"   # file in public/images/
+# resume = "resume.pdf"         # put the file in public/
 
-# Rotates in the hero. Include the article so it reads naturally.
-roles = ["a software engineer", "a CS student at HKU", "a STEM instructor"]
+# Shown under your name in the hero.
+roles = ["Software Engineer", "CS Student at HKU", "STEM Instructor"]
 
 socials = [
   { label = "GitHub", url = "https://github.com/cju12" },
   { label = "LinkedIn", url = "https://www.linkedin.com/in/jinuk-choi" },
+]
+
+# "Who I am" section: one button per [[about]] tab, in this order.
+# Each tab can use any of:
+#   text   = paragraphs (the first one is shown larger)
+#   points = bullet points
+#   facts  = [{ label, value }] rows
+#   groups = [{ name, items }] boxes of tags
+# Keep the [[about]] tabs at the end of the file.
+
+[[about]]
+tab = "Background"
+text = [
+  "Hey, I'm Jinuk! I was born in Korea but grew up mostly in Hong Kong. These days I'm studying Computer Science at HKU (class of 2028) and working as a software engineer at Königsberger Bridges Institute.",
+  "I learned Korean back in primary school, and from 2023 to 2025 I served in the Republic of Korea Army. Between my Korean roots and the army, I picked up a habit of treating everyone with respect and owning whatever I sign up for.",
+  "I speak Korean and English, and I'm slowly getting there with Cantonese.",
+]
+
+# Each item shows the logo in public/icons/ named after it ("C++" -> cplusplus.svg).
+# New tech? Drop its svg in there, or it just shows the name.
+[[about]]
+tab = "Tech stack"
+groups = [
+  { name = "Languages", items = ["Python", "JavaScript", "TypeScript", "C++", "R"] },
+  { name = "Web", items = ["React", "Node.js", "Next.js", "FastAPI", "Streamlit"] },
+  { name = "Data & ML", items = ["TensorFlow", "Pandas", "MongoDB"] },
+]
+
+[[about]]
+tab = "Interests"
+text = [
+  "I like building things people actually use in their day-to-day work, like internal tools and web apps that make someone's job a little easier.",
+  "I also enjoy messing around with raw data until it turns into something useful, and machine learning and AI are where I want to keep digging deeper.",
+  "When I'm not doing any of that, you'll probably find me in a cozy café with a coffee. Usually I'm working on a project there too, so it doesn't really count as a break.",
 ]

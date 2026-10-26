@@ -4,3 +4,7 @@ src/data.json
 __pycache__/
 # private source docs (e.g. résumé with phone number); public files go in public/
 content/*.pdf
+# raw images dropped into content/; the site uses the processed copies in public/
+content/*.png
+content/*.jp*g
+content/logos for projects/

@@ -1,13 +1,20 @@
-# Sorted newest first. Several projects at one event (e.g. different tracks) count as one hackathon in the stats.
+# Sorted newest first.
 #
-# Required: event, project, date ("YYYY-MM"), summary
-# Optional: award, host, track, location, team_size (1 shows as "Solo"), tags, links
+# Required: event, project, date ("YYYY-MM"), points (bullet points)
+# Optional: award, host, track, location, team_size (1 shows as "Solo"), tags, links,
+#           image (event photo or poster in public/images/, shown beside the entry),
+#           logo (put the file in public/logos/ → logo = "logos/x.svg"; without it a simple shape is shown)
 
 [[hackathons]]
-event = "GenAI Inter-University Hackathon"
+event = "Hong Kong Inter-University GenAI Hackathon"
 project = "CareCompass"
+image = "images/hackathon-genai.jpg"
 date = "2026-09"
-summary = "A voice-first health companion for older people in Hong Kong and their carers. Talk in Cantonese or English to log symptoms into a one-page summary for the doctor, keep a medicine list with interaction warnings, and find the A&E you can be seen at soonest from live Hospital Authority waiting times. It organises and routes; it never diagnoses."
+points = [
+  "Voice-first health companion for older people in Hong Kong and their carers, in Cantonese or English",
+  "Turns spoken symptoms into a one-page summary for the doctor and flags medicine interactions",
+  "Suggests the A&E with the shortest total wait from live Hospital Authority data; it never diagnoses",
+]
 team_size = 4
 tags = ["TypeScript", "Next.js", "Python", "FastAPI", "LLM"]
 links = [{ label = "Source", url = "https://github.com/Seungwoo0120/Gen-AI-Hackathon" }]
@@ -17,8 +24,14 @@ event = "Agent Creativity Hackathon for Autism Charity"
 host = "AI Builders"
 track = "CodeBuddy Track"
 project = "Node: HK"
+logo = "logos/node-hk.svg"
+image = "images/hackathon-agent-creativity.jpg"
 date = "2026-08"
-summary = "Hong Kong's MTR network as a graph-theory puzzle. Each round names a line; drag its stations onto the board, where every placed station connects to every other to form a complete graph. Fully keyboard-playable, with station data checked against current MTR sources."
+points = [
+  "Graph-theory puzzle built on Hong Kong's MTR network",
+  "Each round names a line; players place its stations, which connect into a complete graph",
+  "Fully keyboard-playable, with station data checked against current MTR sources",
+]
 location = "Hong Kong"
 team_size = 1
 tags = ["JavaScript", "Graph Theory", "Game"]
@@ -32,8 +45,13 @@ event = "Agent Creativity Hackathon for Autism Charity"
 host = "AI Builders"
 track = "WorkBuddy Track"
 project = "AU-PPORT"
+image = "images/hackathon-agent-creativity.jpg"
 date = "2026-07"
-summary = "An autism support-plan agent skill for WorkBuddy. From one short brief about a child and an upcoming situation, it generates a printable, bilingual (English and Cantonese) support plan with sensory triggers and fixes, a rehearsal story for the child, and accommodations for the teacher."
+points = [
+  "Agent skill for WorkBuddy that turns a short brief about a child and an upcoming situation into a support plan",
+  "Printable and bilingual (English and Cantonese), with sensory triggers, fixes and a rehearsal story for the child",
+  "Includes a note for the teacher with small classroom accommodations",
+]
 location = "Hong Kong"
 team_size = 1
 tags = ["Python", "AI Agents", "Bilingual"]

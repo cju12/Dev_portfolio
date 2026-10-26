@@ -14,26 +14,29 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "src" / "data.json"
 
-# section -> (required text fields, optional fields with their defaults)
+# section -> (required fields with their types, optional fields with their defaults)
 SCHEMA = {
     "profile": (
-        ["name", "tagline", "email"],
-        {"roles": [], "resume": None, "socials": []},
+        {"name": str, "tagline": str, "email": str},
+        {"roles": [], "resume": None, "photo": None, "socials": [], "about": []},
     ),
     "projects": (
-        ["title", "date", "summary"],
-        {"tags": [], "links": [], "image": None, "featured": False},
+        {"title": str, "date": str, "points": list},
+        {"tags": [], "links": [], "image": None, "logo": None, "featured": False},
     ),
     "hackathons": (
-        ["event", "project", "date", "summary"],
-        {"award": None, "host": "", "track": "", "location": "", "team_size": None, "tags": [], "links": []},
+        {"event": str, "project": str, "date": str, "points": list},
+        {"award": None, "host": "", "track": "", "location": "", "team_size": None, "tags": [], "links": [],
+         "logo": None, "image": None},
     ),
     "experience": (
-        ["role", "org", "start", "summary"],
-        {"end": None, "location": "", "url": None, "highlights": [], "tags": []},
+        {"role": str, "org": str, "start": str, "summary": str},
+        {"end": None, "location": "", "url": None, "logo": None, "highlights": [], "tags": []},
     ),
 }
-URL_FIELDS = ("url", "image", "resume")
+# Each [[about]] tab in profile.toml has a name plus any of these blocks.
+TAB_DEFAULTS = {"text": [], "points": [], "facts": [], "groups": []}
+URL_FIELDS = ("url", "image", "logo", "photo", "resume")
 LINK_FIELDS = ("links", "socials")
 
 
@@ -62,7 +65,7 @@ def normalize(item, section, where):
         raise ContentError(f"{where}: " + ", ".join(problems))
 
     item = {**defaults, **item}
-    problems = [f"'{k}' should be text" for k in required if not isinstance(item[k], str)]
+    problems = [f"'{k}' should be {t.__name__}" for k, t in required.items() if not isinstance(item[k], t)]
     problems += [
         f"'{k}' should be {type(d).__name__}"
         for k, d in defaults.items()
@@ -79,7 +82,23 @@ def normalize(item, section, where):
             if not isinstance(link, dict) or set(link) != {"label", "url"}:
                 raise ContentError(f"{where}: {key} entries need exactly label and url")
             check_url(link["url"], where)
+    if "about" in item:
+        item["about"] = [about_tab(tab, where) for tab in item["about"]]
     return item
+
+
+def about_tab(tab, where):
+    if not isinstance(tab, dict) or not isinstance(tab.get("tab"), str) or not set(tab) <= {"tab", *TAB_DEFAULTS}:
+        raise ContentError(f"{where}: each [[about]] needs a tab name and only {', '.join(TAB_DEFAULTS)}")
+    tab = {**TAB_DEFAULTS, **tab}
+    where = f"{where} about tab '{tab['tab']}'"
+    if not all(isinstance(tab[k], list) for k in TAB_DEFAULTS):
+        raise ContentError(f"{where}: {', '.join(TAB_DEFAULTS)} should be lists")
+    if any(not isinstance(f, dict) or set(f) != {"label", "value"} for f in tab["facts"]):
+        raise ContentError(f"{where}: facts entries need exactly label and value")
+    if any(not isinstance(g, dict) or set(g) != {"name", "items"} for g in tab["groups"]):
+        raise ContentError(f"{where}: groups entries need exactly name and items")
+    return tab
 
 
 def load(content_dir, name):
@@ -111,8 +130,8 @@ def build(content_dir):
 
     # Hackathon builds also appear as project cards, tagged so the filter can isolate them.
     data["projects"] += [
-        {"title": h["project"], "date": h["date"], "when": h["when"], "summary": h["summary"],
-         "tags": h["tags"] + ["Hackathon"], "links": h["links"], "image": None, "featured": False}
+        {"title": h["project"], "date": h["date"], "when": h["when"], "points": h["points"],
+         "tags": h["tags"] + ["Hackathon"], "links": h["links"], "image": None, "logo": h["logo"], "featured": False}
         for h in data["hackathons"]
     ]
 

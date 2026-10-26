@@ -1,11 +1,12 @@
 # Sorted newest first. Omit `end` for a current role.
 #
 # Required: role, org, start ("YYYY-MM"), summary
-# Optional: end, location, url, highlights, tags
+# Optional: end, location, url, logo (file in public/logos/; without it a simple shape is shown), highlights, tags
 
 [[experience]]
 role = "Software Engineer"
 org = "Königsberger Bridges Institute (KBI)"
+logo = "logos/kbi.png"
 start = "2026-05"
 summary = "Building internal technical tools that streamline operational workflows and support data processing pipelines."
 highlights = [
